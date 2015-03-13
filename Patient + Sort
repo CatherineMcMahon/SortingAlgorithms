@@ -1,0 +1,44 @@
+import java.util.*;
+public class Patient
+{ 
+    private String name;
+    private int severity;
+    private int money; 
+    public Patient(String inputname, int inputseverity, int inputmoney)
+    {
+        name = inputname;
+        severity = inputseverity;
+        money = inputmoney;
+    }
+
+    public String toString()
+    {
+        return "Person " +name+" with severity " +severity+" and money "+money;
+    }
+
+    public static class SeverityCompare implements Comparator<Patient> 
+    {    
+        public int compare(Patient a, Patient b)
+        {
+            if(a.severity<b.severity)
+                return 1;
+            if(a.severity>b.severity)
+                return -1;
+            else
+                return 0;
+        }
+    }
+    
+    public static class MoneyCompare implements Comparator<Patient> 
+    {    
+        public int compare(Patient a, Patient b)
+        {
+            if(a.money<b.money)
+                return 1;
+            if(a.money>b.money)
+                return -1;
+            else
+                return 0;
+        }
+    }
+}
