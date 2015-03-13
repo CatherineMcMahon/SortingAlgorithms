@@ -1,0 +1,38 @@
+import java.util.*;
+public class Hospital
+{   
+    ArrayList<Patient>a;
+    Comparator<Patient>c;
+    public Hospital(Comparator<Patient> inputc)
+    {
+        a = new ArrayList<Patient>();
+        c = inputc;
+        
+    }
+
+    public boolean add(Patient d)
+    {
+        a.add(d);
+        return true;
+    }
+
+    public Patient remove()
+    {
+        Collections.sort(a,c);
+        return a.remove(0);
+    }
+
+    public Patient peek()
+    {
+        Collections.sort(a,c);
+        return a.get(0);
+    }
+
+    public boolean isEmpty()
+    {
+        if(a.size() == 0)
+            return true;
+        else
+            return false;
+    }
+}
