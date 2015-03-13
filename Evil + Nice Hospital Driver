@@ -1,0 +1,43 @@
+import java.util.*;
+public class HospitalDriver
+{
+    Hospital evil = new CWMHospital(new CWMPatient.MoneyCompare());
+    Hospital nice = new CWMHospital(new CWMPatient.SeverityCompare());
+    public HospitalDriver()
+    {
+    //example of patients that can be created
+        Patient a = new Patient("Sam", 30, 90);
+        Patient b = new Patient("Tom", 10, 99);
+        Patient c = new Patient("Matt", 90, 20);
+        Patient d = new Patient("Dave", 50, 50);
+        Patient e = new Patient("John", 45, 80);
+        Patient f = new Patient("Loryn", 55, 25);
+        Patient g = new Patient("Jen", 25, 46);
+        Patient h = new Patient("Tam", 99, 46);
+        evil.add(a);
+        evil.add(b);
+        evil.add(c);
+        evil.add(d);
+        nice.add(e);
+        nice.add(f);
+        nice.add(g);
+        nice.add(h);
+        //remove and print out patients to see that sort works correctly
+        for(int i=0; i<4; i++)
+        {
+            while(!evil.isEmpty())
+            { 
+                System.out.println("(evil) removed: "+evil.remove());
+            }
+        }
+        System.out.println("");
+        for(int i=0; i<4; i++)
+        {
+            while(!nice.isEmpty())
+            {
+             
+                System.out.println("(nice) removed: "+nice.remove());
+            }
+        }
+    }
+}
