@@ -1,8 +1,8 @@
 import java.util.*;
 public class HospitalDriver
 {
-    Hospital evil = new CWMHospital(new CWMPatient.MoneyCompare());
-    Hospital nice = new CWMHospital(new CWMPatient.SeverityCompare());
+    Hospital evil = new Hospital(new Patient.MoneyCompare());
+    Hospital nice = new Hospital(new Patient.SeverityCompare());
     public HospitalDriver()
     {
     //example of patients that can be created
@@ -13,7 +13,7 @@ public class HospitalDriver
         Patient e = new Patient("John", 45, 80);
         Patient f = new Patient("Loryn", 55, 25);
         Patient g = new Patient("Jen", 25, 46);
-        Patient h = new Patient("Tam", 99, 46);
+        Patient h = new Patient("Catherine", 99, 46);
         evil.add(a);
         evil.add(b);
         evil.add(c);
